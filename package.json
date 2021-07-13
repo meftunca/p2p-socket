@@ -1,0 +1,15 @@
+{
+  "name": "root",
+  "private": false,
+  "scripts": {
+    "bootstrap": "lerna bootstrap  --force-local && lerna exec yarn &&  lerna link",
+    "publish": "git add .; git commit -m 'auto publish'; git push -u; lerna publish --force-publish",
+    "test": "lerna run test",
+    "start": "yarn bootstrap && lerna run start  --stream --parallel",
+    "serve": "yarn bootstrap && lerna exec serve -s build  --scope=@re-flex/docs"
+  },
+  "devDependencies": {
+    "lerna": "^3.22.1"
+  },
+  "version": "0.0.1"
+}
